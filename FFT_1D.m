@@ -8,7 +8,7 @@ N=length(t);                        %采样点数
 df=fs/(N-1);                        %频率分辨率
 f=t*fs*df-max(t*fs*df)/2;           %频率基数
 x=2*sin(30*pi*t)+0.5*cos(120*pi*t)+4*sin(240*pi*t);%函数
-subplot(231),plot(t(1:ceil(T/dt)),x(1:ceil(T/dt))),title('采样后的图像'),xlabel('t/s'),ylabel('幅度');
+subplot(231),plot(t(1:ceil(T/dt)),x(1:ceil(T/dt))),title('采样后的图像'),xlabel('t/s'),ylabel('幅度');%ceil是为了取序列前面部分
 fx=fftshift(fft(x));               %傅里叶变换,并中心化
 subplot(232),plot(f(:),abs(fx)),title('频谱中心化,幅值随频率变化的分布图'),xlabel('f/Hz'),ylabel('频谱分量');
 subplot(233),plot(f(ceil(length(f)/2):length(f)),abs(fx(ceil(length(fx)/2):length(fx)))),title('有效频率范围,幅值随频率变化的分布图'),xlabel('f/Hz'),ylabel('频谱分量');
