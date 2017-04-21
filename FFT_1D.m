@@ -18,5 +18,5 @@ subplot(234),plot(t(1:ceil(T/dt)),xNoise(1:ceil(T/dt))),title('(¼ÓÔëÉù)²ÉÑùºóµÄÍ
 fxNoise=fftshift(fft(xNoise));         %¸µÀïÒ¶±ä»»,²¢ÖĞĞÄ»¯
 subplot(235),plot(f(:),abs(fxNoise)),title('ÆµÆ×ÖĞĞÄ»¯,(¼ÓÔëÉù)·ùÖµËæÆµÂÊ±ä»¯µÄ·Ö²¼Í¼'),xlabel('f/Hz'),ylabel('ÆµÆ×·ÖÁ¿');
 subplot(236),plot(f(ceil(length(f)/2):length(f)),abs(fxNoise(ceil(length(fxNoise)/2):length(fxNoise)))),title('ÓĞĞ§ÆµÂÊ·¶Î§,(¼ÓÔëÉù)·ùÖµËæÆµÂÊ±ä»¯µÄ·Ö²¼Í¼'),xlabel('f/Hz'),ylabel('ÆµÆ×·ÖÁ¿');
-set(gcf,'unit','normalized','position',[0,0,1.0,1.0]);
-saveas(gcf,strcat(mfilename,'_pic'),'jpg');
+set(gcf,'unit','normalized','position',[0,0,1.0,1.0]);%[0,0,1.0,1.0]±íÊ¾×óÏÂ½ÇÎªÔ­µã,³¤ºÍ¿í·Ö±ğÕ¼ÆÁÄ»µÄ100%
+saveas(gcf,strcat(mfilename,'_pic'),'jpg');           %ÒÔÎÄ¼şÃû¼Ó'_pic'ÎªÃû±£´æÎÄ¼ş
